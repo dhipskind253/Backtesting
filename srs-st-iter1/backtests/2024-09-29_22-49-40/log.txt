@@ -1,0 +1,107 @@
+2024-09-30T04:56:19.6027760Z TRACE:: Engine.Main(): LEAN ALGORITHMIC TRADING ENGINE v2.5.0.0 Mode: DEBUG (64bit) Host: Goodrips
+2024-09-30T04:56:19.6681972Z TRACE:: Engine.Main(): Started 4:56 AM
+2024-09-30T04:56:19.6758244Z TRACE:: Config.Get(): Configuration key not found. Key: lean-manager-type - Using default value: LocalLeanManager
+2024-09-30T04:56:19.6929442Z TRACE:: JobQueue.NextJob(): Selected /LeanCLI/main.py
+2024-09-30T04:56:19.7489644Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-capacity - Using default value: 120
+2024-09-30T04:56:19.7492215Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-time-interval-minutes - Using default value: 1440
+2024-09-30T04:56:19.7494540Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-refill-amount - Using default value: 18
+2024-09-30T04:56:19.7541888Z TRACE:: Config.GetValue(): storage-limit - Using default value: 10737418240
+2024-09-30T04:56:19.7544112Z TRACE:: Config.GetValue(): storage-permissions - Using default value: 3
+2024-09-30T04:56:19.7545827Z TRACE:: Config.Get(): Configuration key not found. Key: optimization-id - Using default value: 
+2024-09-30T04:56:19.7547783Z TRACE:: Config.Get(): Configuration key not found. Key: backtest-name - Using default value: local
+2024-09-30T04:56:19.7601619Z TRACE:: Config.Get(): Configuration key not found. Key: data-channel - Using default value: 
+2024-09-30T04:56:19.7603582Z TRACE:: Config.Get(): Configuration key not found. Key: python-venv - Using default value: 
+2024-09-30T04:56:19.7605635Z TRACE:: Config.Get(): Configuration key not found. Key: out-of-sample-max-end-date - Using default value: 
+2024-09-30T04:56:19.7607630Z TRACE:: Config.GetValue(): out-of-sample-days - Using default value: 0
+2024-09-30T04:56:19.7615707Z TRACE:: Config.Get(): Configuration key not found. Key: data-permission-manager - Using default value: DataPermissionManager
+2024-09-30T04:56:19.7860230Z TRACE:: Config.GetValue(): zip-data-cache-provider - Using default value: 10
+2024-09-30T04:56:19.7880947Z TRACE:: Config.Get(): Configuration key not found. Key: fundamental-data-provider - Using default value: CoarseFundamentalDataProvider
+2024-09-30T04:56:19.7922096Z TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+2024-09-30T04:56:19.7928045Z TRACE:: Config.GetValue(): algorithm-manager-time-loop-maximum - Using default value: 20
+2024-09-30T04:56:19.8115206Z TRACE:: Engine.Run(): Resource limits '0' CPUs. 2147483647 MB RAM.
+2024-09-30T04:56:19.8122849Z TRACE:: TextSubscriptionDataSourceReader.SetCacheSize(): Setting cache size to 71582788 items
+2024-09-30T04:56:19.8638064Z TRACE:: Config.GetValue(): downloader-data-update-period - Using default value: 7
+2024-09-30T04:56:20.2334383Z TRACE:: Config.GetValue(): algorithm-creation-timeout - Using default value: 90
+2024-09-30T04:56:20.2368830Z TRACE:: PythonInitializer.Initialize(): start...
+2024-09-30T04:56:21.0081844Z TRACE:: PythonInitializer.Initialize(): ended
+2024-09-30T04:56:21.0096288Z TRACE:: AlgorithmPythonWrapper(): Python version 3.11.7 (main, Dec 15 2023, 18:24:52) [GCC 11.2.0]: Importing python module main
+2024-09-30T04:56:23.2906532Z TRACE:: AlgorithmPythonWrapper(): main successfully imported.
+2024-09-30T04:56:23.2975042Z TRACE:: AlgorithmPythonWrapper(): Creating IAlgorithm instance.
+2024-09-30T04:56:23.3122671Z TRACE:: Config.Get(): Configuration key not found. Key: databases-refresh-period - Using default value: 1.00:00:00
+2024-09-30T04:56:23.4642247Z TRACE:: Config.GetValue(): mute-python-library-logging - Using default value: True
+2024-09-30T04:56:23.4663774Z TRACE:: LocalObjectStore.Initialize(): Storage Root: /Storage. StorageFileCount 9999999. StorageLimit 10240MB
+2024-09-30T04:56:23.4732880Z TRACE:: Config.GetValue(): zip-data-cache-provider - Using default value: 10
+2024-09-30T04:56:23.4808600Z TRACE:: HistoryProviderManager.Initialize(): history providers [SubscriptionDataReaderHistoryProvider]
+2024-09-30T04:56:23.4825978Z TRACE:: BacktestingSetupHandler.Setup(): Setting up job: UID: 314383, PID: 0, Version: 2.5.0.0, Source: WebIDE
+2024-09-30T04:56:23.4877159Z TRACE:: Config.Get(): Configuration key not found. Key: security-data-feeds - Using default value: 
+2024-09-30T04:56:23.6071090Z TRACE:: BacktestingResultHandler(): Sample Period Set: 131.76
+2024-09-30T04:56:23.6093156Z TRACE:: Config.GetValue(): forward-console-messages - Using default value: True
+2024-09-30T04:56:23.7398539Z ERROR:: Engine.Run(): During the algorithm initialization, the following exception has occurred: Trying to dynamically access a method that does not exist throws a TypeError exception. To prevent the exception, ensure each parameter type matches those required by the 'int'>) method. Please checkout the API documentation.
+  at __init__
+    self.Current = IndicatorDataPoint(0, 0)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+ in main.py: line 96
+  at Initialize
+    self.superTrend = SuperTrend(self.superTrendPeriod, self.superTrendMultiplier)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ in main.py: line 21
+ No method matches given arguments for .ctor: (<class 'int'>, <class 'int'>)
+2024-09-30T04:56:23.7406029Z TRACE:: JOB HANDLERS:
+         DataFeed:             QuantConnect.Lean.Engine.DataFeeds.FileSystemDataFeed
+         Setup:                QuantConnect.Lean.Engine.Setup.BacktestingSetupHandler
+         RealTime:             QuantConnect.Lean.Engine.RealTime.BacktestingRealTimeHandler
+         Results:              QuantConnect.Lean.Engine.Results.BacktestingResultHandler
+         Transactions:         QuantConnect.Lean.Engine.TransactionHandlers.BacktestingTransactionHandler
+         Object Store:         QuantConnect.Lean.Engine.Storage.LocalObjectStore
+         History Provider:     QuantConnect.Lean.Engine.HistoricalData.HistoryProviderManager
+         Brokerage:            QuantConnect.Brokerages.Backtesting.BacktestingBrokerage
+         Data Provider:        QuantConnect.Lean.Engine.DataFeeds.DefaultDataProvider
+
+2024-09-30T04:56:23.7412837Z TRACE:: FileSystemDataFeed.Exit(): Start. Setting cancellation token...
+2024-09-30T04:56:23.7423986Z TRACE:: FileSystemDataFeed.Exit(): Exit Finished.
+2024-09-30T04:56:23.7427684Z TRACE:: BacktestingResultHandler.Exit(): starting...
+2024-09-30T04:56:23.7576717Z TRACE:: BacktestingResultHandler.Exit(): Saving logs...
+2024-09-30T04:56:23.7613179Z ERROR:: During the algorithm initialization, the following exception has occurred: Trying to dynamically access a method that does not exist throws a TypeError exception. To prevent the exception, ensure each parameter type matches those required by the 'int'>) method. Please checkout the API documentation.
+  at __init__
+    self.Current = IndicatorDataPoint(0, 0)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+ in main.py: line 96
+  at Initialize
+    self.superTrend = SuperTrend(self.superTrendPeriod, self.superTrendMultiplier)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ in main.py: line 21
+ No method matches given arguments for .ctor: (<class 'int'>, <class 'int'>)
+ Trying to dynamically access a method that does not exist throws a TypeError exception. To prevent the exception, ensure each parameter type matches those required by the 'int'>) method. Please checkout the API documentation.
+  at __init__
+    self.Current = IndicatorDataPoint(0, 0)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+ in main.py: line 96
+  at Initialize
+    self.superTrend = SuperTrend(self.superTrendPeriod, self.superTrendMultiplier)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ in main.py: line 21
+ No method matches given arguments for .ctor: (<class 'int'>, <class 'int'>)
+2024-09-30T04:56:23.7614598Z TRACE:: StopSafely(): Waiting for 'Result Thread' thread to stop...
+2024-09-30T04:56:23.7615865Z TRACE:: Debug: Your log was successfully created and can be retrieved from: /Results/1140832285-log.txt
+2024-09-30T04:56:23.7620070Z TRACE:: BacktestingResultHandler.Run(): Ending Thread...
+2024-09-30T04:56:23.8441482Z TRACE:: 
+STATISTICS:: OrderListHash d41d8cd98f00b204e9800998ecf8427e
+2024-09-30T04:56:23.8443351Z TRACE:: BacktestingResultHandler.SendAnalysisResult(): Processed final packet
+2024-09-30T04:56:23.8448281Z TRACE:: Engine.Run(): Disconnecting from brokerage...
+2024-09-30T04:56:23.8453341Z TRACE:: Engine.Run(): Disposing of setup handler...
+2024-09-30T04:56:23.8455886Z TRACE:: Engine.Main(): Analysis Completed and Results Posted.
+2024-09-30T04:56:23.8463216Z TRACE:: StopSafely(): Waiting for '' thread to stop...
+2024-09-30T04:56:23.8480501Z TRACE:: DataMonitor.GenerateReport():
+DATA USAGE:: Total data requests 0
+DATA USAGE:: Succeeded data requests 0
+DATA USAGE:: Failed data requests 0
+DATA USAGE:: Failed data requests percentage 0%
+DATA USAGE:: Total universe data requests 0
+DATA USAGE:: Succeeded universe data requests 0
+DATA USAGE:: Failed universe data requests 0
+DATA USAGE:: Failed universe data requests percentage 0%
+2024-09-30T04:56:23.8556895Z TRACE:: Engine.Main(): Packet removed from queue: 1140832285
+2024-09-30T04:56:23.8559621Z TRACE:: LeanEngineSystemHandlers.Dispose(): start...
+2024-09-30T04:56:23.8568448Z TRACE:: LeanEngineSystemHandlers.Dispose(): Disposed of system handlers.
+2024-09-30T04:56:23.8570993Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): start...
+2024-09-30T04:56:23.8576614Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): Disposed of algorithm handlers.
